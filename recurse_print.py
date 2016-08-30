@@ -6,9 +6,10 @@ import os
 
 def print_dir(path):
 	for dirName,subdirList,fileList in os.walk(path):
-		print("--- Directory ---",str(dirName))
+		nw_path = dirName.split('/')
+		print("|",(len(nw_path))*"---","[",os.path.basename(dirName),"]")
 		for fl in fileList:
-			print("\t",str(fl))
+			print("|",len(nw_path)*"---","->",str(fl))
 
 
 if __name__ == "__main__":
